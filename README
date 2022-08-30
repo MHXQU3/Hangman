@@ -2,9 +2,14 @@
 
 > Include here a brief description of the project, what technologies are used etc.
 
-## Milestone 1
+## Asking the user for an input
 
 - Answer some of these questions in the next few bullet points. What have you built? What technologies have you used? Why have you used those?
+- The purpose of this milestone was to create a section of code that will ask the user for an input and then verify whether their input was a valid input. A valid input in this game would require the input to meet 3 conditions:
+- Condition 1 is that input must be 1 character long
+- Condition 2 is that character must be a letter
+- Condition 3 is that letter must not be a previously guessed letter
+- Conditions 1 & 2 will have to be met simultaneously
 
 - Example: The FastAPI framework allows for fast and easy construction of APIs and is combined with pydantic, which is used to assert the data types of all incoming data to allow for easier processing later on. The server is ran locally using uvicorn, a library for ASGI server implementation.
   
