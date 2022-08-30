@@ -13,26 +13,53 @@
 
 - Example: The FastAPI framework allows for fast and easy construction of APIs and is combined with pydantic, which is used to assert the data types of all incoming data to allow for easier processing later on. The server is ran locally using uvicorn, a library for ASGI server implementation.
   
-```python
-"""Insert your code here"""
+```python code for this section
+
+def ask_letter(self):
+        letter = input ('please enter a letter: ') 
+
+        if len(letter) != 1 or not letter.isalpha() :
+            print ('Sorry, your input was not valid')
+        
+        elif letter in self.list_letters:
+            print ('Oops! You have already guessed that letter')
+
+        else:
+            self.check_letter(letter)
 ```
 
 > Insert an image/screenshot of what you have built so far here.
 
-## Milestone 2
+## Defining the initialiser
 
-- Does what you have built in this milestone connect to the previous one? If so explain how. What technologies are used? Why have you used them? Have you run any commands in the terminal? If so insert them using backticks (To get syntax highlighting for code snippets add the language after the first backticks).
+- An initializer in python allows us to set a newly created object's attributes to their initial state. In this _init_ method we define numerous variables that we will use later on. A link to the previous method can be seen in the self.list_letters which we defined in the init method. We defined this as an  empty list which we can fill using the guessed letters throughout the games progression.
 
 - Example below:
 
-```bash
-/bin/kafka-topics.sh --list --zookeeper 127.0.0.1:2181
+```python
+def __init__(self, word_list, num_lives=5)
 ```
 
-- The above command is used to check whether the topic has been created successfully, once confirmed the API script is edited to send data to the created kafka topic. The docker container has an attached volume which allows editing of files to persist on the container. The result of this is below:
+- The above initializer initializes two attributes: word list (the list of words that the game word will be picked at random from) and the number of lives the player has. 
+-The word self is used to bind the object’s attributes to the arguments received
+-The game object that will be created in the play_game funtion will make use of this in the following fashion:
 
 ```python
-"""Insert your code here"""
+game = Hangman (word_list, num_lives=5)
+```
+
+```python code for this section
+def __init__(self, word_list, num_lives=5):
+      self.num_lives = num_lives
+      self.word_list = word_list
+      word_list = ['apple', 'pear', 'banana', 'strawberry', 'watermelon', 'orange']
+      self.chosen_word = random.choice(self.word_list)
+      self.word_guessed = list(('_')) * len(self.chosen_word)
+      self.list_letters = []
+      self.num_letters = len(set(self.chosen_word))
+      self.attempts = 0
+      print ('The mystery word has', len(self.chosen_word), 'characters')
+      print (self.word_guessed)
 ```
 
 > Insert screenshot of what you have built working.
