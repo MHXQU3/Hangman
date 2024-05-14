@@ -16,7 +16,9 @@ class Hangman:
     def __init__(self, word_list, num_lives=6):
       self.num_lives = num_lives
       self.word_list = word_list
-      word_list = ['apple', 'pear', 'banana', 'strawberry', 'watermelon', 'orange']
+      word_list = ['apple', 'banana', 'dog', 'orange', 'melon',
+    'read', 'dance', 'happy', 'guitar', 'football', 'novel', 'piano',
+    'elephant', 'dolphin', 'electric', 'crocodile', 'hurricane']
       self.chosen_word = random.choice(self.word_list)
       self.word_guessed = list(('_')) * len(self.chosen_word)
       self.list_letters = []
