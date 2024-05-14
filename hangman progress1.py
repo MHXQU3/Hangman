@@ -71,14 +71,16 @@ def play_game (word_list):
                 game.ask_letter()
 
             else:
-                print ('You have guessed the word. Congratulations!')
+                print (f'You have guessed the word. It was {game.chosen_word}. \nCongratulations!')
                 break
 
             pass
 
 
 if __name__ == '__main__':
-    word_list = ['apple', 'pear', 'banana', 'strawberry', 'watermelon', 'orange']
+    word_list = ['apple', 'banana', 'dog', 'orange', 'melon',
+    'read', 'dance', 'happy', 'guitar', 'football', 'novel', 'piano',
+    'elephant', 'dolphin', 'electric', 'crocodile', 'hurricane']
     play_game(word_list)
 
         
